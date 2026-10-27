@@ -174,9 +174,7 @@ MonoBehaviour:
   turnSpeed: 360
   minDirectionInterval: 2
   maxDirectionInterval: 4
-  arenaCamera: {fileID: 0}
   lookAheadDistance: 1.5
-  viewportMargin: 0.08
 --- !u!114 &4738736820474925987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TastyFeedback
   label: {fileID: 3001506021828914042}
-  arenaCamera: {fileID: 0}
   duration: 0.9
   downScreenOffset: 0.9
   heightOffset: 0.8

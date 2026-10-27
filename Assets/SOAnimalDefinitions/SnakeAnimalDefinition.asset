@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SnakeAnimalDefinition
   m_EditorClassIdentifier: Assembly-CSharp::AnimalDefinition
   speciesName: Snake
-  foodRole: 1
+  foodChainLevel: 10
   prefab: {fileID: 6681989148719592263, guid: 23f939a56a3d0416395f8cc11d66773b, type: 3}

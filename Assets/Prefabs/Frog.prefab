@@ -170,7 +170,6 @@ MonoBehaviour:
   jumpDistance: 2.5
   jumpHeight: 0.8
   jumpInterval: 1.25
-  viewportMargin: 0.08
 --- !u!114 &-870107219153932785
 MonoBehaviour:
   m_ObjectHideFlags: 0

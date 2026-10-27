@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FrogAnimalDefinition
   m_EditorClassIdentifier: Assembly-CSharp::AnimalDefinition
   speciesName: Frog
-  foodRole: 0
+  foodChainLevel: 0
   prefab: {fileID: -6993631071859958893, guid: f5873939bc12d4cbbad4e8099eb50cad, type: 3}

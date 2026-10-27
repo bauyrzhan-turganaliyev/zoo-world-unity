@@ -789,6 +789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c926237890c9244d6835941d0432e362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZooInstaller
+  arenaCamera: {fileID: 330585545}
+  arenaViewportMargin: 0.08
 --- !u!1 &1659539116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,13 +1074,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba36d848571a4f728f8808446adadee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalSpawner
-  spawnCamera: {fileID: 330585545}
   species:
   - {fileID: 11400000, guid: 419ad78a1dcc64fa5b72a0c5045b628d, type: 2}
   - {fileID: 11400000, guid: a7914f3099491468cb39e6fc13432e43, type: 2}
   minSpawnInterval: 1
   maxSpawnInterval: 2
-  viewportMargin: 0.1
   spawnHeight: 1
   initialPoolSize: 12
 --- !u!4 &1872081386
