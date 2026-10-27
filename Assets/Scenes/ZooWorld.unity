@@ -527,6 +527,7 @@ MonoBehaviour:
   spawnCamera: {fileID: 330585545}
   species:
   - {fileID: 11400000, guid: 419ad78a1dcc64fa5b72a0c5045b628d, type: 2}
+  - {fileID: 11400000, guid: a7914f3099491468cb39e6fc13432e43, type: 2}
   minSpawnInterval: 1
   maxSpawnInterval: 2
   viewportMargin: 0.1
