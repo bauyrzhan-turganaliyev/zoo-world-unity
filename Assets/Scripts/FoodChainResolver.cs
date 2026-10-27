@@ -1,5 +1,8 @@
+using System;
+
 public sealed class FoodChainResolver
 {
+
     public bool TryResolve(Animal first, Animal second, out Animal eater)
     {
         eater = null;
@@ -33,6 +36,7 @@ public sealed class FoodChainResolver
             return false;
 
         eater = winner;
+        winner.NotifyAte();
         return true;
     }
 }

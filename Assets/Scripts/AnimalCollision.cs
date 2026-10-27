@@ -27,10 +27,6 @@ public sealed class AnimalCollision : MonoBehaviour
         if (other == null || other == _animal)
             return;
 
-        if (!_foodChain.TryResolve(_animal, other, out Animal eater))
-            return;
-
-        if (eater.TryGetComponent(out TastyFeedback feedback))
-            feedback.Show();
+        _foodChain.TryResolve(_animal, other, out _);
     }
 }

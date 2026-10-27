@@ -1080,6 +1080,7 @@ MonoBehaviour:
   maxSpawnInterval: 2
   viewportMargin: 0.1
   spawnHeight: 1
+  initialPoolSize: 12
 --- !u!4 &1872081386
 Transform:
   m_ObjectHideFlags: 0

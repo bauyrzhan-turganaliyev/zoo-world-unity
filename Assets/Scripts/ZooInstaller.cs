@@ -6,5 +6,7 @@ public sealed class ZooInstaller : MonoInstaller
     {
         Container.Bind<FoodChainResolver>().AsSingle();
         Container.Bind<AnimalStatistics>().AsSingle();
+        Container.Bind<AnimalPool>().AsSingle();
+        Container.Bind<AnimalFactory>().AsSingle();
     }
 }

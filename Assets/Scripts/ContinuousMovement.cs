@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
-public sealed class SnakeMovement : MonoBehaviour
+public sealed class ContinuousMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField, Min(0.1f)] private float speed = 2.5f;
@@ -26,7 +26,7 @@ public sealed class SnakeMovement : MonoBehaviour
             arenaCamera = Camera.main;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         ChooseDirection();
     }

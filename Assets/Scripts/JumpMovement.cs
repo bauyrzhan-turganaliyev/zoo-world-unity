@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
-public sealed class FrogMovement : MonoBehaviour
+public sealed class JumpMovement : MonoBehaviour
 {
     [Header("Jump")]
     [SerializeField, Min(0.1f)] private float jumpDistance = 2.5f;
@@ -21,6 +21,12 @@ public sealed class FrogMovement : MonoBehaviour
         _body = GetComponent<Rigidbody>();
         if (_arenaCamera == null)
             _arenaCamera = Camera.main;
+    }
+
+    private void OnEnable()
+    {
+        _grounded = false;
+        _nextJumpTime = 0f;
     }
 
     private void FixedUpdate()

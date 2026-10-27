@@ -11,16 +11,17 @@ public sealed class AnimalSpawner : MonoBehaviour
     [SerializeField, Min(0.1f)] private float maxSpawnInterval = 2f;
     [SerializeField, Range(0f, 0.45f)] private float viewportMargin = 0.1f;
     [SerializeField] private float spawnHeight = 1f;
+    [SerializeField, Range(10, 15)] private int initialPoolSize = 12;
 
     private readonly List<AnimalDefinition> _validSpecies = new List<AnimalDefinition>();
-    private IInstantiator _instantiator;
-    private AnimalStatistics _statistics;
+    private AnimalFactory _factory;
+    private AnimalPool _pool;
 
     [Inject]
-    private void Construct(IInstantiator instantiator, AnimalStatistics statistics)
+    private void Construct(AnimalFactory factory, AnimalPool pool)
     {
-        _instantiator = instantiator;
-        _statistics = statistics;
+        _factory = factory;
+        _pool = pool;
     }
 
     private IEnumerator Start()
@@ -31,6 +32,13 @@ public sealed class AnimalSpawner : MonoBehaviour
             yield break;
         }
 
+        if (_factory == null || _pool == null)
+        {
+            Debug.LogError("AnimalSpawner: Extenject bindings are missing. Check SceneContext/ZooInstaller.", this);
+            yield break;
+        }
+
+        _validSpecies.Clear();
         if (species != null)
         {
             foreach (AnimalDefinition definition in species)
@@ -50,6 +58,9 @@ public sealed class AnimalSpawner : MonoBehaviour
             Debug.LogError("AnimalSpawner: assign at least one valid animal definition", this);
             yield break;
         }
+
+        foreach (AnimalDefinition definition in _validSpecies)
+            _pool.Prewarm(definition, transform, initialPoolSize);
 
         while (true)
         {
@@ -72,14 +83,7 @@ public sealed class AnimalSpawner : MonoBehaviour
             return;
         }
 
-        Animal animal = _instantiator.InstantiatePrefabForComponent<Animal>(
-            definition.Prefab,
-            ray.GetPoint(distance),
-            Quaternion.identity,
-            transform);
-
-        animal.Initialize(definition);
-        _statistics.Track(animal);
+        _factory.Spawn(definition, ray.GetPoint(distance), Quaternion.identity);
     }
 
     private void OnValidate()
