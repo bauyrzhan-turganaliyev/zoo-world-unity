@@ -14,11 +14,13 @@ public sealed class AnimalSpawner : MonoBehaviour
 
     private readonly List<AnimalDefinition> _validSpecies = new List<AnimalDefinition>();
     private IInstantiator _instantiator;
+    private AnimalStatistics _statistics;
 
     [Inject]
-    private void Construct(IInstantiator instantiator)
+    private void Construct(IInstantiator instantiator, AnimalStatistics statistics)
     {
         _instantiator = instantiator;
+        _statistics = statistics;
     }
 
     private IEnumerator Start()
@@ -77,6 +79,7 @@ public sealed class AnimalSpawner : MonoBehaviour
             transform);
 
         animal.Initialize(definition);
+        _statistics.Track(animal);
     }
 
     private void OnValidate()

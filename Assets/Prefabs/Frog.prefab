@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2544613161105267339}
   - component: {fileID: -6993631071859958893}
   - component: {fileID: -7649674900329436591}
+  - component: {fileID: -870107219153932785}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -169,5 +170,16 @@ MonoBehaviour:
   jumpDistance: 2.5
   jumpHeight: 0.8
   jumpInterval: 1.25
-  arenaCamera: {fileID: 0}
   viewportMargin: 0.08
+--- !u!114 &-870107219153932785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5224529166937116613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b1d5e1aa384b2aaa686a6d7e03e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalCollision
